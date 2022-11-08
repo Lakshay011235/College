@@ -1,3 +1,6 @@
+/*
+Q. Write a program to add two numbers using friend function
+*/
 #include <iostream>
 using namespace std;
     class a;    
