@@ -18,9 +18,9 @@ int main() {
      }
      cout << "Iteration\ta\t\tb\t\tx\t\tf(x)\n";
      for (int i=0;i<iter;i++) {
-           x = (a+b)/2;
+           x = b - f(b)*((b - a)/(f(b)-f(a)));
            cout << to_string(i+1) +"\t\t"+to_string(a)+"\t"+to_string(b)+"\t"+to_string(x)+"\t"+to_string(f(x))+"\n";
-           if (abs(f(x)) < 0.00000001) break;
+           if (abs(f(x)) < 0.000001) break;
            (f(x)<0) ? a=x : b=x;
      }
      cout << "\nThe nearest root is:" << x;
