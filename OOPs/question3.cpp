@@ -1,5 +1,6 @@
 /*
-Q. Write a program to add two numbers using friend function
+Write a program to find the greatest of two given numbers in two different classes using friend
+function.
 */
 #include <iostream>
 using namespace std;
@@ -25,7 +26,7 @@ using namespace std;
     };
 
     void greatest(a a1,b b1) {
-        cout <<  "greatest number is:" + to_string((a1.number>b1.number)? a1.number : b1.number);
+        cout <<  "Greatest number is:" + to_string((a1.number>b1.number)? a1.number : b1.number) << endl;
     }
     
 int main() {
@@ -35,6 +36,6 @@ int main() {
     
     greatest(a1,b1);
 
-    cout << "Lakshay Sharma :: 02396402721";
+    cout << "Written By :> Lakshay Sharma :: 02396402721";
     return 0;
 }

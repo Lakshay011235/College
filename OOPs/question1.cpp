@@ -1,8 +1,6 @@
 /*
-Q.  Write a program to perform matrix multiplication using user-defined matrix object.
+Write a program for multiplication of two matrices using OOP.
 */
-
-
 #include<iostream>
 using namespace std;
 
@@ -53,13 +51,12 @@ void matrix :: multiply(matrix m1, matrix m2){
 }
 int main()
 {
-    cout << "asdf";
     matrix m1,m2,m3;
     m1.input();
     m2.input();
     m3.multiply(m1,m2);
     m3.output();
     cout << "\n\n";
-    cout << "Lakshay Sharma :: 02396402721";
+    cout << "Written By :> Lakshay Sharma :: 02396402721";
     return 0;
 }
