@@ -1,36 +1,28 @@
 /*
-Write a program to overload unary operator ++.
+Write a program to overload new and delete operator.
 */
-#include <iostream>
-
-class Integer {
-public:
-  // Constructor to initialize the integer value
-  Integer(int value) : value_(value) {}
-
-  // Overloaded ++ operator to increment the integer value
-  Integer operator++() {
-    ++value_;
-    return *this;
-  }
-
-  // Overloaded << operator to output the integer value
-  friend std::ostream& operator<<(std::ostream& os, const Integer& obj) {
-    return os << obj.value_;
-  }
-
-private:
-  // The integer value
-  int value_;
+#include<iostream>
+#include<stdlib.h>  //for malloc and free
+class num{
+        int num_;
+    public:
+        num(int value) : num_(value) {}
+        void display(){
+            std::cout<< "Number : " << num_ << std::endl;
+        }
+        void * operator new(size_t size){
+            std::cout<< "Overloading new operator with size: " << size << std::endl;
+            void * p = malloc(size);
+            return p;
+        }
+        void operator delete(void * p){
+            std::cout<< "Overloading delete operator called" << std::endl;
+            free(p);
+        }
 };
-
-int main() {
-  // Create an Integer object
-  Integer n(10);
-
-  // Use the ++ operator to increment the integer value
-  std::cout << "++n = " << ++n << '\n';  // ++n = 11
-
-  std::cout << "Written By :> Lakshay Sharma :: 02396402721";
-  return 0;
+int main(){
+	num * p = new num(14);
+	p->display();
+	delete p;
+    std::cout << "Written By :> Lakshay Sharma :: 02396402721";
 }
