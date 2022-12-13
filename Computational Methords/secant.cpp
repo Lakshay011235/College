@@ -21,7 +21,7 @@ int main() {
            x = b - f(b)*((b - a)/(f(b)-f(a)));
            cout << to_string(i+1) +"\t\t"+to_string(a)+"\t"+to_string(b)+"\t"+to_string(x)+"\t"+to_string(f(x))+"\n";
            if (abs(f(x)) < 0.000001) break;
-           a=b : b=x;
+           a=b ; b=x;
      }
      cout << "\nThe nearest root is:" << x;
      cout << "\nWritten by: Lakshay Sharma 02396402721" << endl;
