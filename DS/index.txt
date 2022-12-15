@@ -1,0 +1,25 @@
+       Viva:-
+                     1. How do you find the distance between two nodes in a Binary tree?
+                     2. What is a self balanced tree?
+                     3. How to check whether the two trees are equivalent?
+                     4. How a Binary tree is represented in memory?
+
+Experiment - 7:-
+               Questions:-
+                      1. Write a program showing the implementation of Insertion sort?
+                      2. Write a program showing the implementation of Merge sort?
+                      3. Write a program showing the implementation of Selection sort?
+                      4. Write a program showing the implementation of Quick sort?
+                      5. Write a program showing the implementation of Bubble sort?
+                      6. Write a program showing the implementation of Heap sort (can be either min or max heap)?
+                Viva:-
+                      1. What is the difference between internal and external sorting?
+                      2. Make a chart of complexities of all sorting algorithms.
+
+Experiment - 8:-
+                Questions:-
+                     1. Write a program to implement searching using hashing method?
+                     2. Write a program to create a graph and perform DFS and BFS?
+                Viva:-
+                      1. Explain what is a graph?
+                      2. Under what circumstances DFS is preferred over BFS?

@@ -1,27 +1,41 @@
-/*
-Q.  Write a program to perform linear search on an array
-*/
-
-#include <iostream>
+// C++ program to implement iterative Binary Search
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
+// A iterative binary search function. It returns
+// location of x in given array arr[l..r] if present,
+// otherwise -1
+int binarySearch(int arr[], int l, int r, int x)
 {
-    int arr[10] = {1,3,5,7,9,11,13,15,17,19};
-    int elem; int check = 0;
-    cout << "Array:\t";
-    for(int i = 0;i<10;i++) {
-        cout << arr[i] << "\t";
-    }
-    cout << "\nElement to find:";
-    cin >> elem;
-    for(int i = 0;i<10;i++) {
-        if (arr[i] == elem) {
-            cout << "value:" << elem << "\nIndex:" << i;
-            check = 1;
-        }
-    }
-    cout << ((check==0)?"There is no such value":"");
-    cout << "Lakshay Sharma :: 02396402721";
-    return 0;
+	while (l <= r) {
+		int m = l + (r - l) / 2;
+
+		// Check if x is present at mid
+		if (arr[m] == x)
+			return m;
+
+		// If x greater, ignore left half
+		if (arr[m] < x)
+			l = m + 1;
+
+		// If x is smaller, ignore right half
+		else
+			r = m - 1;
+	}
+
+	// if we reach here, then element was
+	// not present
+	return -1;
+}
+
+int main(void)
+{
+	int arr[] = { 2, 3, 4, 10, 40 };
+	int x = 10;
+	int n = sizeof(arr) / sizeof(arr[0]);
+	int result = binarySearch(arr, 0, n - 1, x);
+	(result == -1)
+		? cout << "Element is not present in array"
+		: cout << "Element is present at index " << result;
+	return 0;
 }
