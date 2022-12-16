@@ -1,25 +1,82 @@
-       Viva:-
-                     1. How do you find the distance between two nodes in a Binary tree?
-                     2. What is a self balanced tree?
-                     3. How to check whether the two trees are equivalent?
-                     4. How a Binary tree is represented in memory?
+Practical file questions:-
+
+Experiment - 1:-
+            Questions:-
+                  1. Write a program showing the implementation of array concatenation.
+                  2. Write a program showing the implementation of Linear search.
+                  3. Write a program showing the implementation of Binary search.
+                  4. Write a program showing the implementation of Matrix Multiplication.
+            Viva:-
+                  1. What is the difference between Linear search and Binary search?
+                  2. What happens if we apply Binary search algorithm to a sorted linked list?
+
+Experiment - 2:-
+            Questions:-
+                  1. Write a program showing the implementation of Stack and Queue with array.
+                  2. Write a program to implement two stacks using single array.
+            Viva:-
+                  1. How stacks are different from arrays?
+                  2. Explain the overflow and underflow conditions?
+                  3. What is static implementation?
+
+Experiment - 3:-
+            Questions:-
+                  1. Write a program showing the implementation of Linked list
+                  2. Write a program for the insertion (at beginning,end and any position) in a Linked list.
+                  3. Write a program for the deletion (at beginning,end and any position) in a Linked list.
+                  4. Write a program for the reverse of a Linked list
+            Viva:-
+                  1. Why to prefer Linked list over arrays?
+                  2. Is it better to implement stack using array or Linked list?
+                  3. Is there any disadvantage of Linked list?
+                  4. How will you find the middle element of a singly linked list without iterating the list more than once?
+
+Experiment - 4:-
+            Questions:-
+                  1. Write a program showing the implementation of Doubly and Circular linked list?
+                  2. Write a program for the insertion (at beginning,end and any position) in a Doubly and Circular linked list.
+                  3. Write a program for the deletion (at beginning,end and any position) in a Doubly and Circular linked list.
+                  4. Write a program for the reverse of a Doubly and Circular linked list.
+            Viva:-
+                  1. What are the advantages of using Doubly linked list?
+                  2. What do you mean by slow and fast pointer?
+                  3. What all pointers are required for implementating heterogenous linked list?
+                  4. What is a header?
+
+Experiment - 5:-
+            Questions:-
+                  1. Write a program showing the implementation of Stack and Queue with Linked list.
+            Viva:-
+                  1. Write applications of queue?
+                  2. What is priority queue?
+                  3. Why circular queue is beneficial over normal queue?
+
+Experiment - 6:-
+            Questions:-
+                  1. Write a program to create a Binary tree and perform traversal ( pre-order, post-order, Inorder)
+                  2. Write a program to create a Binary search tree and perform traversal ( pre-order, post-order, Inorder)
+            Viva:-
+                  1. How do you find the distance between two nodes in a Binary tree?
+                  2. What is a self balanced tree?
+                  3. How to check whether the two trees are equivalent?
+                  4. How a Binary tree is represented in memory?
 
 Experiment - 7:-
-               Questions:-
-                      1. Write a program showing the implementation of Insertion sort?
-                      2. Write a program showing the implementation of Merge sort?
-                      3. Write a program showing the implementation of Selection sort?
-                      4. Write a program showing the implementation of Quick sort?
-                      5. Write a program showing the implementation of Bubble sort?
-                      6. Write a program showing the implementation of Heap sort (can be either min or max heap)?
-                Viva:-
-                      1. What is the difference between internal and external sorting?
-                      2. Make a chart of complexities of all sorting algorithms.
+            Questions:-
+                  1. Write a program showing the implementation of Insertion sort?
+                  2. Write a program showing the implementation of Merge sort?
+                  3. Write a program showing the implementation of Selection sort?
+                  4. Write a program showing the implementation of Quick sort?
+                  5. Write a program showing the implementation of Bubble sort?
+                  6. Write a program showing the implementation of Heap sort (can be either min or max heap)?
+            Viva:-
+                  1. What is the difference between internal and external sorting?
+                  2. Make a chart of complexities of all sorting algorithms.
 
 Experiment - 8:-
-                Questions:-
-                     1. Write a program to implement searching using hashing method?
-                     2. Write a program to create a graph and perform DFS and BFS?
-                Viva:-
-                      1. Explain what is a graph?
-                      2. Under what circumstances DFS is preferred over BFS?
+            Questions:-
+                  1. Write a program to implement searching using hashing method?
+                  2. Write a program to create a graph and perform DFS and BFS?
+            Viva:-
+                  1. Explain what is a graph?
+                  2. Under what circumstances DFS is preferred over BFS?
