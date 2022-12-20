@@ -3,9 +3,10 @@
 
 using namespace std;
 
-vector<float> split(string str) {
+// String Parsing
+vector<double> split(string str) {
     string str1;
-    vector<float> vect;
+    vector<double> vect;
     string search;
     for (int i=0; i < str.length(); i++ ) {
         search = str[i];
@@ -18,55 +19,51 @@ vector<float> split(string str) {
         }
     }
     vect.push_back(stof(str1));
-    return  vect;
+    return vect;
+}
+// Function to calculate the divided difference coefficient
+double dividedDifference(vector<double> &x, vector<double> &y, int i, int j)
+{
+    if (j == 0)
+        return y[i];
+
+    return (dividedDifference(x, y, i + 1, j - 1) - dividedDifference(x, y, i, j - 1)) / (x[i + j] - x[i]);
+}
+
+// Function to evaluate the polynomial at a given value of x
+double newtonInterpolation(vector<double> &x, vector<double> &y, double xi)
+{
+    double result = y[0];
+    double product;
+    for (int i = 1; i < x.size(); i++)
+    {
+        product = 1;
+        for (int j = 0; j < i; j++)
+            product = product * (xi - x[j]);
+        result += dividedDifference(x, y, 0, i) * product;
+    }
+    return result;
 }
 
 int main()
 {
     string abc;
-    vector<float> vect1,vect2;
-    int val;
+    vector<double> x, y;
     cout << "Use space to seperate\n";
+
     cout << "X:\t";
     getline(cin,abc);
-    vect1 = split(abc);
+    x = split(abc);
+
     cout << "F(x):\t";
     getline(cin,abc);
-    vect2 = split(abc);
+    y = split(abc);
+
+    double xi;
     cout << "value of X:";
-    cin >> val;
-    float arr[vect2.size()];
-    for (int i = 0; i<vect2.size(); i++) {
-        arr[i] = vect2[i];
-    }
-    float new_arr[vect2.size()];
-    vector<float> dd;
-    int real_index = 0;
-    int table_length = vect1.size();
-    while (table_length != 0) {
-        for (int i=0; i < table_length-1; i++) {
-            new_arr[i] = (arr[i+1] - arr[i])/(vect1[i+1+real_index] - vect1[i]);
-        }
-        for (int i=0; i < table_length-1; i++) {
-            arr[i] = new_arr[i];
-            if (i == 0) {
-                dd.push_back(arr[i]);
-            }
-        }
-        table_length = table_length - 1;
-        real_index = real_index + 1;
-    }
-    float sum = vect2[0], prod = 1;
-    
-    for (int i=0; i < vect1.size(); i++) {
-        for (int j=0; j < i+1; j++) {
-            prod = prod*(val - vect1[j]);
-            
-        }
-        sum = sum + dd[i]*prod;
-        prod = 1;
-    }
-    cout << "Ans:" << sum;
-    cout << "\nWritten by: Lakshay Sharma 02396402721" << endl;
+    cin >> xi;
+
+    cout << "Ans: " << newtonInterpolation(x, y, xi) << endl;
+
     return 0;
 }
