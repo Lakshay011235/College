@@ -1,69 +1,59 @@
-#include <iostream>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-// String Parsing
-vector<double> split(string str) {
-    string str1;
-    vector<double> vect;
-    string search;
-    for (int i=0; i < str.length(); i++ ) {
-        search = str[i];
-        if (search != "\t") {
-            str1 = str1 + str[i];
-        }
-        else {
-            vect.push_back(stof(str1));
-            str1 = "";
-        }
-    }
-    vect.push_back(stof(str1));
-    return vect;
-}
-// Function to calculate the divided difference coefficient
-double dividedDifference(vector<double> &x, vector<double> &y, int i, int j)
-{
-    if (j == 0)
-        return y[i];
-
-    return (dividedDifference(x, y, i + 1, j - 1) - dividedDifference(x, y, i, j - 1)) / (x[i + j] - x[i]);
+// Function to find the product term
+float proterm(int i, float value, float x[]){
+	float pro = 1;
+	for (int j = 0; j < i; j++) {
+		pro = pro * (value - x[j]);
+	}
+	return pro;
 }
 
-// Function to evaluate the polynomial at a given value of x
-double newtonInterpolation(vector<double> &x, vector<double> &y, double xi)
-{
-    double result = y[0];
-    double product;
-    for (int i = 1; i < x.size(); i++)
-    {
-        product = 1;
-        for (int j = 0; j < i; j++)
-            product = product * (xi - x[j]);
-        result += dividedDifference(x, y, 0, i) * product;
-    }
-    return result;
+// Function for calculating divided difference table
+void dividedDiffTable(float x[], float y[][10], int n){
+	for (int i = 1; i < n; i++) {
+		for (int j = 0; j < n - i; j++) {
+			y[j][i] = (y[j][i - 1] - y[j + 1][i - 1]) / (x[j] - x[i + j]);
+		}
+	}
 }
 
+// Function for applying Newton's divided difference formula
+float applyFormula(float value, float x[], float y[][10], int n){
+	float sum = y[0][0];
+	for (int i = 1; i < n; i++) {
+	    sum = sum + (proterm(i, value, x) * y[0][i]);
+	}
+	return sum;
+}
 int main()
 {
-    string abc;
-    vector<double> x, y;
-    cout << "Use space to seperate\n";
+	// number of inputs given
+	int n = 5;
+	float value, sum, y[10][10];
+	float x[] = { 2, 3, 5, 8, 12};
 
-    cout << "X:\t";
-    getline(cin,abc);
-    x = split(abc);
+	// y[][] is used for divided difference
+	// table where y[][0] is used for input
+	y[0][0] = 10;
+	y[1][0] = 15;
+	y[2][0] = 25;
+	y[3][0] = 40;
+    y[4][0] = 60;
 
-    cout << "F(x):\t";
-    getline(cin,abc);
-    y = split(abc);
+	// value to be interpolated
+	value = 4;
 
-    double xi;
-    cout << "value of X:";
-    cin >> xi;
+    // Calculate the divided difference table
+    dividedDiffTable(x, y, n);
 
-    cout << "Ans: " << newtonInterpolation(x, y, xi) << endl;
+	// printing the value
+    cout << "X:\t2\t3\t5\t8\t12" << endl;
+    cout << "F(x):\t10\t20\t25\t40\t60" << endl;
+    cout << "value of X:" << value << endl;
+    cout << "Ans:" << applyFormula(value, x, y, n);
 
-    return 0;
+    cout << "\nWritten by: Lakshay Sharma 02396402721" << endl;
+	return 0;
 }
