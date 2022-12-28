@@ -17,12 +17,22 @@ void selectionSort(std::vector<int>& arr)
             if (arr[j] < arr[minIndex]) {
                 minIndex = j;
             }
+            std::cout << "Step " << i << "." << j << " : \t" ;
+            for (int x : arr) {
+                std::cout << x << " ";
+            }
+            std::cout << "\t<" << arr[minIndex] << ">" << std::endl;
         }
 
         // Swap the minimum element with the first element of the unsorted portion
         int temp = arr[i];
         arr[i] = arr[minIndex];
         arr[minIndex] = temp;
+        std::cout << "Step " << i << "->" << " : \t" ;
+        for (int x : arr) {
+            std::cout << x << " ";
+        }
+        std::cout << std::endl << std::endl;
     }
 }
 
@@ -30,8 +40,15 @@ int main()
 {
     // Test the selection sort function
     std::vector<int> arr = { 4, 2, 1, 3, 6, 5 };
-    selectionSort(arr);
+    std::cout << "Input : \t" ;
+    for (int x : arr) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
 
+    selectionSort(arr);
+    
+    std::cout << "Output : \t" ;
     for (int x : arr) {
         std::cout << x << " ";
     }
