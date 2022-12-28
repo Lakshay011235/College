@@ -58,8 +58,15 @@ int main()
 {
     // Test the heap sort function
     std::vector<int> arr = { 4, 2, 1, 3, 6, 5 };
-    heapSort(arr);
+    std::cout << "Input : \t" ;
+    for (int x : arr) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
 
+    heapSort(arr);
+    
+    std::cout << "Output : \t" ;
     for (int x : arr) {
         std::cout << x << " ";
     }
