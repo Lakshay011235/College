@@ -25,6 +25,11 @@ void insertionSort(std::vector<int>& arr)
 
         // Insert the current element into its correct position
         arr[j + 1] = curr;
+        std::cout << "Step " << i << " : \t" ;
+        for (int x : arr) {
+            std::cout << x << " ";
+        }
+        std::cout << std::endl;
     }
 }
 
@@ -32,11 +37,20 @@ int main()
 {
     // Test the insertion sort function
     std::vector<int> arr = { 4, 2, 1, 3, 6, 5 };
-    insertionSort(arr);
 
+    std::cout << "Input : \t" ;
     for (int x : arr) {
         std::cout << x << " ";
     }
+    std::cout << std::endl;
+
+    insertionSort(arr);
+    
+    std::cout << "Output : \t" ;
+    for (int x : arr) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
     std::cout << std::endl;
     std::cout << "\nWritten By: Lakshay Sharma 02396402721";
     return 0;

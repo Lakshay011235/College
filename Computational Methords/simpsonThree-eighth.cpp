@@ -35,6 +35,7 @@ int main(){
     
     cout<< endl <<"Required value of integration is: "<< integration;
     
+    cout << "\nWritten by: Lakshay Sharma 02396402721" << endl;
     return 0;
 }
 
