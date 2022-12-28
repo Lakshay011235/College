@@ -23,7 +23,13 @@ void bubbleSort(std::vector<int>& arr)
                 arr[j + 1] = temp;
                 swapped = true;
             }
+            std::cout << "Step " << i << "." << j <<" : \t" ;
+            for (int x : arr) {
+                std::cout << x << " ";
+            }
+            std::cout << std::endl;
         }
+        std::cout << std::endl;
 
         // If no swaps were made, the array is already sorted
         if (!swapped) {
@@ -36,8 +42,15 @@ int main()
 {
     // Test the bubble sort function
     std::vector<int> arr = { 4, 2, 1, 3, 6, 5 };
-    bubbleSort(arr);
+    std::cout << "Input : \t" ;
+    for (int x : arr) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
 
+    bubbleSort(arr);
+    
+    std::cout << "Output : \t" ;
     for (int x : arr) {
         std::cout << x << " ";
     }

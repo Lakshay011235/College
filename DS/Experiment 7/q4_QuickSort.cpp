@@ -38,6 +38,13 @@ void quickSort(std::vector<int>& arr, int low, int high)
         // Partition the array around a pivot and get the pivot's index
         int pivotIndex = partition(arr, low, high);
 
+        std::cout << "Step-> : \t" ;
+        for (int x = 0; x < arr.size() ; x++) {
+            if (x == pivotIndex) std::cout << "<" << arr[x] << ">" << " ";
+            else std::cout << arr[x] << " ";
+            // std::cout << arr[x] << " ";
+        }
+        std::cout << std::endl;
         // Recursively sort the left and right halves of the array
         quickSort(arr, low, pivotIndex - 1);
         quickSort(arr, pivotIndex + 1, high);
@@ -48,8 +55,15 @@ int main()
 {
     // Test the quick sort function
     std::vector<int> arr = { 4, 2, 1, 3, 6, 5 };
-    quickSort(arr, 0, arr.size() - 1);
+    std::cout << "Input : \t" ;
+    for (int x : arr) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
 
+    quickSort(arr,0, arr.size()-1);
+    
+    std::cout << "Output : \t" ;
     for (int x : arr) {
         std::cout << x << " ";
     }
