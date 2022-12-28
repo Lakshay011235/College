@@ -33,7 +33,11 @@ std::vector<int> merge(const std::vector<int>& left, const std::vector<int>& rig
     while (j < right.size()) {
         result.push_back(right[j++]);
     }
-
+    std::cout << "Merged : \t" ;
+    for (int x : result) {
+        std::cout << x << " ";
+    }
+    std::cout << "\n" ;
     return result;
 }
 
@@ -50,10 +54,20 @@ std::vector<int> mergeSort(std::vector<int>& arr)
     std::vector<int> left(arr.begin(), arr.begin() + mid);
     std::vector<int> right(arr.begin() + mid, arr.end());
 
+    std::cout << "Left : \t" ;
+    for (int x : left) {
+        std::cout << x << " ";
+    }
+    std::cout << "\t\t" ;
+    std::cout << "Right : \t" ;
+    for (int x : right) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
     // Recursively sort the left and right halves
     left = mergeSort(left);
     right = mergeSort(right);
-
+    
     // Merge the sorted left and right halves
     return merge(left, right);
 }
@@ -62,11 +76,19 @@ int main()
 {
     // Test the merge sort function
     std::vector<int> arr = { 4, 2, 1, 3, 6, 5 };
-    arr = mergeSort(arr);
-
+    std::cout << "Input : \t" ;
     for (int x : arr) {
         std::cout << x << " ";
     }
+    std::cout << std::endl;
+
+    arr = mergeSort(arr);
+    
+    std::cout << "Output : \t" ;
+    for (int x : arr) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
     std::cout << std::endl;
     std::cout << "\nWritten By: Lakshay Sharma 02396402721";
     return 0;
