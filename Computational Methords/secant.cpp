@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 float f(float x) {  return x*x*x + x - 1;}
