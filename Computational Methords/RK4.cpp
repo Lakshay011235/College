@@ -31,6 +31,7 @@ int main()
         y0 += k;
         x0 += h;
     }
+    
     std::cout << "\nValue of f at x=" << xn << " is :: " << yn << std::endl;
     std::cout << "\nWritten by: Lakshay Sharma 02396402721" << std::endl;
     return 0;
