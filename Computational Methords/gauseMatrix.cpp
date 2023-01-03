@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+
 // Prints matrix in a matrix format
 void print_matrix(float matrix[3][4]){
     std::cout << std::setprecision(4)
@@ -76,13 +77,23 @@ void gaussJordanElimination(float matrix[3][4]) {
 
 int main()
 {
-    float a[3][4] = {2,3,-1,5,3,2,1,10,1,-5,3,0};
-    float b[3][4] = {1,1,1,-3,2,-1,-1,-3,1,-1,1,-9};
+    //for reference and checking :: float a[3][4] = {2,3,-1,5,3,2,1,10,1,-5,3,0};  answer={1,2,3};
+    float a[3][4];
+    fill_matrix(a);
+    float b[3][4];
+    for (int i = 0; i < 3; i++) for (int j = 0; j < 4; j++) b[i][j] = a[i][j];
 
-    //fill_matrix(a);
-    print_matrix(b);
+    std::cout << "Original Matrix :" << std::endl;
+    print_matrix(a);
+
+    gaussElimination(a);
+    std::cout << "Gauss Elimination :" << std::endl;
+    print_matrix(a);
+
     gaussJordanElimination(b);
+    std::cout << "Gauss Jordan Elimination :" << std::endl;
     print_matrix(b);
 
+    std::cout << "\nWritten by: Lakshay Sharma 02396402721" << std::endl;
     return 0;
 }
