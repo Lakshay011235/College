@@ -2,7 +2,7 @@
 
 ---
 
->>Please star if you find this useful
+>Please star if you find this useful
 
 ---
 
@@ -10,4 +10,4 @@ This repository hold my progamming done for MAIT (my college). Feel free to use 
 
 ## Written by Lakshay Sharma   
 
-Contact: lakshayegyu@gmail.com
+>Contact: lakshayegyu@gmail.com
