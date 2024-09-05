@@ -231,3 +231,15 @@ The results of the linear regression analysis are presented in the form of plots
 ### Conclusion
 
 This lab explored various techniques for performing linear regression analysis, ranging from machine learning models to traditional statistical methods. The results demonstrate that linear regression is a powerful tool for modeling the relationship between variables and predicting outcomes. The choice of method depends on the specific requirements of the analysis, such as the need for scalability, interpretability, or computational efficiency.
+
+## Lab 3: Simple Logistic Regression
+
+---
+
+## Lab 4: ID3 Decision Trees
+
+---
+
+## Lab 5: Dimensionality reduction using PCA and LDA
+
+---
